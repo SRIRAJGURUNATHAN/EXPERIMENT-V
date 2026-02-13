@@ -205,20 +205,22 @@ function endDrag(e){
   updateSlider();
   prevTranslate = -index * track.offsetWidth;
   track.style.transition = "transform .4s ease";
-}
-function nextSlide(){
-  if(index < slides.length - 1){
-    index++;
-    updateSlider();
+
+  function nextSlide(){
+    if(index < slides.length - 1){
+      index++;
+      updateSlider();
+    }
+  }
+
+  function prevSlide(){
+    if(index > 0){
+      index--;
+      updateSlider();
+    }
   }
 }
 
-function prevSlide(){
-  if(index > 0){
-    index--;
-    updateSlider();
-  }
-}
 
 const track = document.getElementById('track');
 const slides = document.querySelectorAll('.slide');
