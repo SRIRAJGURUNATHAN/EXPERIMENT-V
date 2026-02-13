@@ -93,6 +93,10 @@ Adhu yennamo therla unna first time paathapave flattttt uh d 😂❤️.Idhu yen
 </div>
 
 <div class="dots" id="dots"></div>
+<div style="margin-top:15px;">
+  <button class="btn" onclick="prevSlide()">◀</button>
+  <button class="btn" onclick="nextSlide()">▶</button>
+</div>
 
 <button class="btn" onclick="next('music')">tadaann🎵➜</button>
 </div>
@@ -102,7 +106,7 @@ Adhu yennamo therla unna first time paathapave flattttt uh d 😂❤️.Idhu yen
 <div class="card">
 <h1>My Love can be described as this...😂❤️</h1>
 
-<video id="loveVideo" width="200" controls playsinline>
+<video id="loveVideo" width="800" controls playsinline>
   <source src="song1.mp4" type="video/mp4">
 </video>
 
@@ -201,6 +205,19 @@ function endDrag(e){
   updateSlider();
   prevTranslate = -index * track.offsetWidth;
   track.style.transition = "transform .4s ease";
+}
+function nextSlide(){
+  if(index < slides.length - 1){
+    index++;
+    updateSlider();
+  }
+}
+
+function prevSlide(){
+  if(index > 0){
+    index--;
+    updateSlider();
+  }
 }
 
 const track = document.getElementById('track');
