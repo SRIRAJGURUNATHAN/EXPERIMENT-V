@@ -133,14 +133,9 @@ Adhu yennamo therla unna first time paathapave flattttt uh d 😂❤️.Idhu yen
 </audio>
 
 <script>
+let track, slides, dotsDiv, dots, index = 0;
+
 window.onload = function() {
-
-// ⭐ Gallery Slider (Button controlled)
-const track = document.getElementById("track");
-const slides = document.querySelectorAll(".slide");
-const dotsDiv = document.getElementById("dots");
-let index = 0;
-
 
 let heartsStarted=false;
 function startHearts(){ if(heartsStarted) return; heartsStarted=true;
@@ -155,26 +150,46 @@ function next(id){
   const letter = document.getElementById("letterMusic");
   const video = document.getElementById("loveVideo");
 
-  // 🎬 Stop video by default when switching pages
   if(video){
     video.pause();
     video.currentTime = 0;
   }
 
-  // 🎵 Stop background music when reaching music section
   if(id === "music"){
     bg.pause();
     bg.currentTime = 0;
-    
-    // ▶️ Auto play video
     video.play();
   }
 
-  // 💌 Letter section
   if(id === "letter"){
     letter.play();
     startTyping();
   }
+
+  // ⭐⭐ IMPORTANT — initialise gallery ONLY when opened
+  if(id === "gallery"){
+      initGallery();
+  }
+}
+function initGallery(){
+
+  // already initialized? skip
+  if(track) return;
+
+  track = document.getElementById("track");
+  slides = document.querySelectorAll(".slide");
+  dotsDiv = document.getElementById("dots");
+  index = 0;
+
+  // create dots
+  slides.forEach((_, i) => {
+    const d = document.createElement("span");
+    d.className = "dot";
+    if (i === 0) d.classList.add("active");
+    dotsDiv.appendChild(d);
+  });
+
+  dots = document.querySelectorAll(".dot");
 }
 
 // create dots
