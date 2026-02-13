@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For My Kuchu Puchu ❤️</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Playfair+Display:wght@500;700&family=Great+Vibes&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Poppins;background: radial-gradient(circle at top,#3b0a2a,#140014);color:#fff;overflow-x:hidden}
+section{min-height:100vh;display:flex;justify-content:center;align-items:center;text-align:center;padding:24px}
+.card{backdrop-filter:blur(25px);background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);padding:30px;border-radius:28px;box-shadow:0 20px 60px rgba(0,0,0,.6);max-width:900px;width:100%}
+.hidden{display:none}
+h1{font-family:'Great Vibes',cursive;font-size:3.2rem;margin-bottom:10px;color:#ffd1dc}
+h2{font-family:'Playfair Display',serif;color:#ffe4ec}
+p{font-size:17px;line-height:1.6;color:#f8dbe4}
+.btn{margin:12px;padding:14px 28px;border:none;border-radius:40px;background:linear-gradient(45deg,#ff4b91,#ff8fab);color:white;font-weight:600;cursor:pointer;transition:.4s;box-shadow:0 0 20px rgba(255,75,145,.6)}
+.btn:hover{transform:scale(1.1);box-shadow:0 0 35px rgba(255,75,145,.9)}
+.fade{animation:fade 1.2s}
+@keyframes fade{from{opacity:0;transform:translateY(60px)}to{opacity:1;transform:translateY(0)}}
+.glow{text-shadow:0 0 14px rgba(255,182,193,.9),0 0 30px rgba(255,105,180,.8)}
+.heart{position:fixed;bottom:-20px;animation:float 6s linear infinite;pointer-events:none}
+@keyframes float{to{transform:translateY(-110vh) rotate(360deg)}}
+#home{background-image:url('valentine-bg.jpeg');background-size:cover;background-position:center;background-repeat:no-repeat;position:relative;flex-direction:column}
+#home::before{content:"";position:absolute;inset:0;background:rgba(0,0,0,.15);z-index:0}
+#home h1,#home button{position:relative;z-index:1}
+.hero-title{font-size:3.2rem;color:#fff;text-shadow:0 0 20px #ff4b91,0 0 40px #ff4b91,0 0 70px #ff2e7a}
+
+/* 📱 Swipe Gallery */
+.swipe-container{position:relative;width:100%;overflow:hidden;margin-top:10px}
+.swipe-track{display:flex;transition:transform .4s ease}
+.slide{min-width:100%;display:flex;justify-content:center;align-items:center}
+.slide img{width:92vw;height:70vh;object-fit:cover;border-radius:18px;box-shadow:0 15px 40px rgba(0,0,0,.6)}
+.dots{margin-top:12px}
+.dot{height:10px;width:10px;margin:0 4px;background:#fff;border-radius:50%;display:inline-block;opacity:.4}
+.dot.active{opacity:1;background:#ff6fae}
+.slide img{
+  user-select:none;
+  -webkit-user-drag:none;
+  pointer-events:none;
+}
+
+</style>
+</head>
+<body>
+
+<section id="question">
+ <div class="card fade">
+  <h1 class="glow">Hloo My princess❤️</h1>
+  <h2>Will you be my Valentine forever😂❤️?</h2>
+  <button class="btn" onclick="startSite()">Yes 💖</button>
+  <button class="btn" onclick="startSite()">YES 😂</button>
+ </div>
+</section>
+
+<section id="home" class="hidden">
+  <h1 class="hero-title fade">Happy Valentine's Day My Kuchu Puchu 💕</h1>
+  <button class="btn" onclick="next('reasons')">👉🏻💌👈🏻➜</button>
+</section>
+
+<section id="reasons" class="hidden"><div class="card">
+<h1>Why I Love You 💘</h1>
+<p>Idha nee enta aayiram vaati ketta question😂 naan un kitta aayiram vaati solliten 😂 irundhalum solrenn.
+Adhu yennamo therla unna first time paathapave flattttt uh d 😂❤️.Idhu yenna nu reason lam ila,ana Unnoda andha cute reaction❤️😂,aprm un kovam, Unnoda bayam,romba nermaiya irukuradhu🫡, enna thitradhu idhulam innum adhigam aakitu en kadhalaaaaaaaa that's it😂❤️</p>
+<button class="btn" onclick="next('gallery')">wee❤️➜</button>
+</div></section>
+
+<!-- ❤️ Swipe Memories Section -->
+<section id="gallery" class="hidden">
+<div class="card">
+<h1>Happiesttt Momentss 📷</h1>
+
+<div class="swipe-container" id="swipe">
+  <div class="swipe-track" id="track">
+    <div class="slide"><img src="photo1.jpeg"></div>
+    <div class="slide"><img src="photo2.jpeg"></div>
+    <div class="slide"><img src="photo3.jpeg"></div>
+    <div class="slide"><img src="photo4.jpeg"></div>
+    <div class="slide"><img src="photo5.jpeg"></div>
+    <div class="slide"><img src="photo6.jpeg"></div>
+    <div class="slide"><img src="photo7.jpeg"></div>
+    <div class="slide"><img src="photo8.jpeg"></div>
+    <div class="slide"><img src="photo9.jpeg"></div>
+    <div class="slide"><img src="photo10.jpeg"></div>
+  </div>
+</div>
+
+<div class="dots" id="dots"></div>
+
+<button class="btn" onclick="next('music')">tadaann🎵➜</button>
+</div>
+</section>
+
+<section id="music" class="hidden">
+<div class="card">
+<h1>My Love can be described as this...😂❤️</h1>
+
+<video id="loveVideo" width="800" controls playsinline>
+  <source src="song1.mp4" type="video/mp4">
+</video>
+
+<h1>...forever❤️</h1>
+
+<button class="btn" onclick="next('letter')">Final note💖➜</button>
+</div>
+</section>
+
+
+<section id="letter" class="hidden"><div class="card">
+<h1>My Dear Vidyaa💌</h1>
+<p id="typeText"></p>
+</div></section>
+
+<!-- Background music -->
+<audio id="bgmusic" loop>
+ <source src="song.mpeg" type="audio/mpeg">
+</audio>
+
+<!-- Letter section music -->
+<audio id="letterMusic" loop>
+ <source src="letter-song.mpeg" type="audio/mpeg">
+</audio>
+
+<script>
+let heartsStarted=false;
+function startHearts(){ if(heartsStarted) return; heartsStarted=true;
+ setInterval(()=>{const heart=document.createElement("div");heart.className="heart";heart.innerHTML="💖";heart.style.left=Math.random()*100+"vw";heart.style.fontSize=(Math.random()*25+15)+"px";document.body.appendChild(heart);setTimeout(()=>heart.remove(),6000);},300);
+}
+function startSite(){document.getElementById('question').classList.add('hidden');document.getElementById('home').classList.remove('hidden');document.getElementById('bgmusic').play();startHearts();}
+function next(id){
+  document.querySelectorAll('section').forEach(s=>s.classList.add('hidden'));
+  document.getElementById(id).classList.remove('hidden');
+
+  const bg = document.getElementById("bgmusic");
+  const letter = document.getElementById("letterMusic");
+  const video = document.getElementById("loveVideo");
+
+  // 🎬 Stop video by default when switching pages
+  if(video){
+    video.pause();
+    video.currentTime = 0;
+  }
+
+  // 🎵 Stop background music when reaching music section
+  if(id === "music"){
+    bg.pause();
+    bg.currentTime = 0;
+    
+    // ▶️ Auto play video
+    video.play();
+  }
+
+  // 💌 Letter section
+  if(id === "letter"){
+    letter.play();
+    startTyping();
+  }
+}
+
+
+// ❤️ UNIVERSAL SWIPE (works on phone + laptop + trackpad)
+const track = document.getElementById('track');
+const slides = document.querySelectorAll('.slide');
+const dotsDiv = document.getElementById('dots');
+
+let index = 0;
+let startX = 0;
+let isDragging = false;
+
+// create dots
+slides.forEach((_,i)=>{
+  const d=document.createElement('span');
+  d.className='dot';
+  if(i===0) d.classList.add('active');
+  dotsDiv.appendChild(d);
+});
+const dots=document.querySelectorAll('.dot');
+
+function updateSlider(){
+  track.style.transform = `translateX(-${index*100}%)`;
+  dots.forEach(d=>d.classList.remove('active'));
+  dots[index].classList.add('active');
+}
+
+/* ⭐ Pointer events (modern solution) */
+track.addEventListener("pointerdown", e=>{
+  isDragging = true;
+  startX = e.clientX;
+});
+
+track.addEventListener("pointerup", e=>{
+  if(!isDragging) return;
+  let diff = startX - e.clientX;
+  
+  if(diff > 60 && index < slides.length-1) index++;
+  if(diff < -60 && index > 0) index--;
+  
+  updateSlider();
+  isDragging = false;
+});
+
+const message=`
+Idhu last 10 days la rendavadhu letter 😄  
+Nammaloda first Valentine’s Day idhu 💕  
+Idhuku anga irundha edhachum gift present pannirupan…  
+ana correct ah indha time la inga vanten 😂
+
+Irundhalum edhachum onnu pannanumnu thonuchu…  
+unga veetuku gift parcel potta, unna enga veetuku parcel panniruvanga nu enaku theriyum 😂  
+adhann chinna oru surprise nu sollalammm ❤️
+
+Idhu takkunu yosichadhunaala time romba kammiya irundhuchi…  
+adhann yedho unaku pudikumnu nenaikiran 😄  
+Andha video paathirupanu nenaikiran last slide la 😂
+
+Idhulam konjam cringe ah irukalam…  
+ana enaku pannanumnu thonuchi adhaan ❤️  
+Idha vida enaku vera option um ilai madam 😂
+
+So indha kutty techie surprise 😄  
+Neeyum konjam surprise aavanu nenaikiran 💕
+
+Indha Valentine ku one week munnadiye  
+yellarum oru oru day ku oru name vechi celebrate pannuvangala…  
+adhellam enaku theriyadhu d 😂  
+Nee adha naan pannalanu nenaicha sorryyy 😄  
+Future la kathukuren ❤️
+
+Indha vaati indha kutty techie surprise dhaan 💌
+
+Happy Valentine’s Day myyy Valentine ❤️
+
+With love,  
+Your nenjil kudiyirukkum ungall Swii 😂❤️`;
+
+let i = 0;
+function startTyping(){
+  document.getElementById("typeText").innerHTML = ""; // clear first
+  i = 0;
+  typeWriter();
+}
+
+function typeWriter(){
+  if(i < message.length){
+    document.getElementById("typeText").innerHTML += message.charAt(i);
+    i++;
+    setTimeout(typeWriter, 90);
+  }
+}
+
+</script>
+</body>
+</html>
