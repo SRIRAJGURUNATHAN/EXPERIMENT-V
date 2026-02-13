@@ -133,6 +133,13 @@ Adhu yennamo therla unna first time paathapave flattttt uh d 😂❤️.Idhu yen
 </audio>
 
 <script>
+// ⭐ Gallery Slider (Button controlled)
+const track = document.getElementById("track");
+const slides = document.querySelectorAll(".slide");
+const dotsDiv = document.getElementById("dots");
+let index = 0;
+
+
 let heartsStarted=false;
 function startHearts(){ if(heartsStarted) return; heartsStarted=true;
  setInterval(()=>{const heart=document.createElement("div");heart.className="heart";heart.innerHTML="💖";heart.style.left=Math.random()*100+"vw";heart.style.fontSize=(Math.random()*25+15)+"px";document.body.appendChild(heart);setTimeout(()=>heart.remove(),6000);},300);
@@ -167,53 +174,6 @@ function next(id){
     startTyping();
   }
 }
-
-/* ❤️ UNIVERSAL DRAG + SWIPE (mobile + laptop + trackpad) */
-
-let startPos = 0;
-let currentTranslate = 0;
-let prevTranslate = 0;
-let dragging = false;
-
-track.addEventListener("pointerdown", startDrag);
-track.addEventListener("pointermove", dragMove);
-track.addEventListener("pointerup", endDrag);
-track.addEventListener("pointerleave", endDrag);
-
-function startDrag(e){
-  dragging = true;
-  startPos = e.clientX;
-  track.style.transition = "none";
-}
-
-function dragMove(e){
-  if(!dragging) return;
-  const currentPosition = e.clientX;
-  currentTranslate = prevTranslate + currentPosition - startPos;
-  track.style.transform = `translateX(${currentTranslate}px)`;
-}
-
-function endDrag(e){
-  if(!dragging) return;
-  dragging = false;
-
-  const movedBy = currentTranslate - prevTranslate;
-
-  if(movedBy < -80 && index < slides.length - 1) index++;
-  if(movedBy > 80 && index > 0) index--;
-
-  updateSlider();
-  prevTranslate = -index * track.offsetWidth;
-  track.style.transition = "transform .4s ease";
-
-}
-// ⭐ Gallery Slider (Button controlled)
-
-const track = document.getElementById("track");
-const slides = document.querySelectorAll(".slide");
-const dotsDiv = document.getElementById("dots");
-
-let index = 0;
 
 // create dots
 slides.forEach((_, i) => {
