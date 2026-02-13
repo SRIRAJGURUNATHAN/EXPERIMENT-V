@@ -192,15 +192,6 @@ function initGallery(){
   dots = document.querySelectorAll(".dot");
 }
 
-// create dots
-slides.forEach((_, i) => {
-  const d = document.createElement("span");
-  d.className = "dot";
-  if (i === 0) d.classList.add("active");
-  dotsDiv.appendChild(d);
-});
-const dots = document.querySelectorAll(".dot");
-
 function updateSlider(){
   track.style.transform = `translateX(-${index * 100}%)`;
   dots.forEach(d => d.classList.remove("active"));
