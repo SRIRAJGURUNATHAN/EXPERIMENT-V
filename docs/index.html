@@ -206,45 +206,45 @@ function endDrag(e){
   prevTranslate = -index * track.offsetWidth;
   track.style.transition = "transform .4s ease";
 
-  function nextSlide(){
-    if(index < slides.length - 1){
-      index++;
-      updateSlider();
-    }
-  }
-
-  function prevSlide(){
-    if(index > 0){
-      index--;
-      updateSlider();
-    }
-  }
 }
+// ⭐ Gallery Slider (Button controlled)
 
-
-const track = document.getElementById('track');
-const slides = document.querySelectorAll('.slide');
-const dotsDiv = document.getElementById('dots');
+const track = document.getElementById("track");
+const slides = document.querySelectorAll(".slide");
+const dotsDiv = document.getElementById("dots");
 
 let index = 0;
-let startX = 0;
-let isDragging = false;
 
 // create dots
-slides.forEach((_,i)=>{
-  const d=document.createElement('span');
-  d.className='dot';
-  if(i===0) d.classList.add('active');
+slides.forEach((_, i) => {
+  const d = document.createElement("span");
+  d.className = "dot";
+  if (i === 0) d.classList.add("active");
   dotsDiv.appendChild(d);
 });
-const dots=document.querySelectorAll('.dot');
+const dots = document.querySelectorAll(".dot");
 
 function updateSlider(){
-  track.style.transform = `translateX(-${index*100}%)`;
-  dots.forEach(d=>d.classList.remove('active'));
-  dots[index].classList.add('active');
+  track.style.transform = `translateX(-${index * 100}%)`;
+  dots.forEach(d => d.classList.remove("active"));
+  dots[index].classList.add("active");
 }
 
+// 👉 NEXT button
+function nextSlide(){
+  if(index < slides.length - 1){
+    index++;
+    updateSlider();
+  }
+}
+
+// 👈 PREV button
+function prevSlide(){
+  if(index > 0){
+    index--;
+    updateSlider();
+  }
+}
 
 
 const message=`
